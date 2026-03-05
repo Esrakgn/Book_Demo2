@@ -9,7 +9,7 @@ This repository is my first hands-on project using **Entity Framework Core** wit
 - **Migrations** (Add-Migration, Update-Database)
 - **Type Configuration** (e.g., precision/constraints)
 - **Inversion of Control / Dependency Injection** (DbContext registration)
-- **API Testing** (Swagger / Postman)
+- **API Testing** (Swagger)
 
 ## Tech Stack
 - .NET 10
