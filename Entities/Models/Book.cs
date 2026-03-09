@@ -1,4 +1,8 @@
-﻿namespace WebAPİ.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Entities.Models
 {
     public class Book
     {
@@ -6,6 +10,5 @@
         public String Title { get; set; }
 
         public decimal Price { get; set; }
-
     }
 }

@@ -1,17 +1,22 @@
 using Microsoft.EntityFrameworkCore;
-using WebAPİ.Repositories;
+
+using Entities.Models;
+using Repositories.EFCore;
+using WebAPİ.Extensions;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-     .AddNewtonsoftJson();
+builder.Services.AddControllers()
+    .AddNewtonsoftJson();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 
-builder.Services.AddDbContext<RepositoryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
 
 var app = builder.Build();
 
